@@ -127,10 +127,10 @@ namespace STLBFGS
     // Run an L-BFGS optimization
     // Algorithm 7.5
     // Nocedal and Wright, Numerical optimization (2006)
-    bool Optimizer::run(vector &x)
+    bool Optimizer::run(vector &x, double& f)
     {
         const int n = static_cast<int>(x.size());
-        double f;
+        //         double f;
         vector g(n), p(n);
 
         func_grad(x, f, g);
