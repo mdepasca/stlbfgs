@@ -13,7 +13,7 @@ namespace STLBFGS {
 
     struct Optimizer {
         Optimizer(func_grad_eval func_grad) : func_grad(func_grad) {}
-        bool run(vector &sol); // actual optimization loop
+        bool run(vector &sol, double& f); // actual optimization loop
 
         struct IHessian { // L-BFGS approximates inverse Hessian matrix by storing a limited history of past updates
             void mult(const vector &g, vector &result) const; // matrix-vector multiplication
